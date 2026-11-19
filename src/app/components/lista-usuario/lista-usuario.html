@@ -1,0 +1,23 @@
+
+<h2>Lista de Usuarios</h2>
+
+<p class="total-usuarios">
+  Total de usuarios: <strong>{{ usuarios.length }}</strong>
+</p>
+
+<div class="contenedor">
+  @for (usuario of usuarios; track usuario.id) {
+    <div class="tarjeta">
+      <h3>{{ usuario.name }}</h3>
+
+      <p><strong>ID:</strong> {{ usuario.id }}</p>
+      <p><strong>Username:</strong> {{ usuario.username }}</p>
+      <p><strong>Email:</strong> {{ usuario.email }}</p>
+
+      <button [routerLink]="['/detalleUsuario', usuario.id]">
+        Detalles
+      </button>
+    </div>
+  }
+</div>
+
