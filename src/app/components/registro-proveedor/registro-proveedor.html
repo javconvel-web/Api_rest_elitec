@@ -1,0 +1,50 @@
+
+<div class="container">
+
+    <mat-toolbar color="primary">
+        <span style="display: flex; align-items: center; gap: 10px;">
+            Registro de Proveedor
+        </span>
+    </mat-toolbar>
+
+    <form [formGroup]="forms" class="form-grid" autocomplete="off"
+          (ngSubmit)="registrar()" style="margin-top: 20px;">
+
+        <mat-form-field appearance="fill">
+            <mat-label>Nombre</mat-label>
+            <input matInput formControlName="nombre" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>DNI</mat-label>
+            <input matInput formControlName="dni" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>País</mat-label>
+            <mat-select formControlName="pais">
+                <mat-option *ngFor="let op of lstPaises" [value]="op.idPais">
+                    {{ op.nombre }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Tipo de proveedor</mat-label>
+            <mat-select formControlName="tipo">
+                <mat-option *ngFor="let op of lstTipos" [value]="op.idDataCatalogo">
+                    {{ op.descripcion }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <div class="grid-full form-actions">
+            <button mat-raised-button color="primary" type="submit">
+                <mat-icon>save</mat-icon>
+                <span>Registrar Proveedor</span>
+            </button>
+        </div>
+
+    </form>
+</div>
+

@@ -5,6 +5,8 @@ import { ListaMercaderia } from './components/lista-mercaderia/lista-mercaderia'
 import { ListaMercaderiaDetalle } from './components/lista-mercaderia-detalle/lista-mercaderia-detalle';
 import { ListaUsuario } from './components/lista-usuario/lista-usuario';
 import { ListaUsuarioDetalle } from './components/lista-usuario-detalle/lista-usuario-detalle';
+import { RegistroAutor } from './components/registro-autor/registro-autor';
+import { RegistroProveedor } from './components/registro-proveedor/registro-proveedor';
 
 export const routes: Routes = [
 
@@ -21,5 +23,12 @@ export const routes: Routes = [
     // Lista de usuarios
     { path: 'listaUsuario', component: ListaUsuario },
     { path: 'detalleUsuario/:id', component: ListaUsuarioDetalle },
+
+     // Registro de autor
+    { path: 'registroAutor', component: RegistroAutor },
+
+    // Registro de proveedor
+    { path: 'registroProveedor', component: RegistroProveedor },
+
 
 ];
